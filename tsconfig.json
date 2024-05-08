@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@images/*" : ["./public/images/*"],
+      "@shared/*" : ["./src/shared/*"],
+      "@widgets/*" : ["./src/widgets/*"],
+      "@entities/*" : ["./src/entities/*"],
+      "@pages/*" : ["./src/pages/*"],
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "exclude": ["node_modules"]
+}
