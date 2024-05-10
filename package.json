@@ -4,9 +4,8 @@
   "main": "app/index.js",
   "license": "MIT",
   "scripts": {
-    "start:firefox": "webpack serve --open-app-name 'firefox' --env mode=development",
-    "start": "webpack serve --open --env mode=development",
-    "build": "webpack"
+    "start": "dotenvx run -f .env.development -- webpack serve --open",
+    "build": "dotenvx run -f .env.production -- webpack"
   },
   "devDependencies": {
     "@types/react": "^18.2.58",
@@ -21,9 +20,11 @@
     "typescript": "^5.3.3",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.2"
+    "webpack-dev-server": "^5.0.2",
+    "webpack-pwa-manifest": "^4.3.0"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^0.38.0",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
@@ -36,5 +37,8 @@
     "workbox-precaching": "^7.1.0",
     "workbox-routing": "^7.1.0",
     "workbox-strategies": "^7.1.0"
+  },
+  "resolutions": {
+    "strip-ansi": "6.0.0"
   }
 }
