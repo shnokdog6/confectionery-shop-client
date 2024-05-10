@@ -1,8 +1,6 @@
 {
-  "name": "app",
-  "version": "1.0.0",
-  "main": "app/index.js",
-  "license": "MIT",
+  "name": "front",
+  "packageManager": "yarn@4.2.2",
   "scripts": {
     "start": "dotenvx run -f .env.development -- webpack serve --open",
     "build": "dotenvx run -f .env.production -- webpack"
@@ -21,7 +19,7 @@
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.2",
-    "webpack-pwa-manifest": "^4.3.0"
+    "webpack-pwa-manifest": "patch:webpack-pwa-manifest@npm%3A4.3.0#~/.yarn/patches/webpack-pwa-manifest-npm-4.3.0-8e6d2ff6b5.patch"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^0.38.0",
