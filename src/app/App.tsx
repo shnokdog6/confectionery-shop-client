@@ -1,8 +1,9 @@
 import React from 'react';
-import {MainPage} from "@pages/main";
 import {createGlobalStyle} from "styled-components";
 import {RouterProvider} from "react-router-dom";
 import {AppRouter} from "./router";
+import {Provider} from "react-redux";
+import {appStore} from "./store";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -20,10 +21,10 @@ const GlobalStyles = createGlobalStyle`
 
 const App = () => {
     return (
-        <React.Fragment>
+        <Provider store={appStore}>
             <GlobalStyles/>
             <RouterProvider router={AppRouter}/>
-        </React.Fragment>
+        </Provider>
     );
 };
 

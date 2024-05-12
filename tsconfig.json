@@ -19,8 +19,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

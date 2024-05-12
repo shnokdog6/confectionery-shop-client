@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ImageLinkProps} from "@shared/image-link/ImageLink";
+import {ImageLinkProps} from "@shared/ui/image-link/ImageLink";
 
 export const StyledLink = styled.a<ImageLinkProps>`
     width: ${props => props.width}px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Header} from "@shared/header";
+import {Header} from "@shared/ui/header";
 
 export const StyledHeader = styled(Header)`
     height: 80px;

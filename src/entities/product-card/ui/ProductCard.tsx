@@ -1,16 +1,19 @@
-import React from 'react';
-import cake from "@images/card.png"
-import {StyledWrapper, StyledImg, StyledHeader, StyledSpan, StyledButton} from "./ProductCardStyles";
+import { IProduct } from "@entities/product-card";
+import cake from "@images/card.png";
+import { FC } from 'react';
+import { StyledButton, StyledHeader, StyledImg, StyledSpan, StyledWrapper } from "./ProductCardStyles";
 
-const ProductCard = () => {
+export interface ProductCardProps {
+    src: IProduct;
+}
+
+export const ProductCard: FC<ProductCardProps> = ({ src }) => {
     return (
         <StyledWrapper>
-            <StyledImg src={cake}/>
-            <StyledHeader>Вишнёвый пирог</StyledHeader>
-            <StyledSpan>2000₽</StyledSpan>
+            <StyledImg src={cake} />
+            <StyledHeader>{src.name}</StyledHeader>
+            <StyledSpan>{src.cost}₽</StyledSpan>
             <StyledButton>В корзину</StyledButton>
         </StyledWrapper>
     );
 };
-
-export default ProductCard;

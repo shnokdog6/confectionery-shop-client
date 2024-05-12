@@ -1,7 +1,7 @@
 import React, {FC, HTMLAttributes} from 'react';
 import {StyledContainer, StyledDiv, StyledFooter} from "./FooterStyles";
 import {Stack} from "react-bootstrap";
-import {ImageLink} from "@shared/image-link";
+import {ImageLink} from "@shared/ui/image-link";
 import whatsapp from "@images/whatsapp.png"
 import telegram from "@images/telegram.png"
 import vk from "@images/vk.png"

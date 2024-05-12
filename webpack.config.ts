@@ -3,25 +3,30 @@ import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import "webpack-dev-server"
 import WebpackPwaManifest from "webpack-pwa-manifest";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 interface Environment {
     mode: "development" | "production";
     public_url: string;
+    port: number;
 }
 
 function createConfig(env: Environment): Configuration {
+
+    let isDev: boolean = env.mode === "development";
+
     return {
         mode: env.mode,
         entry: "./src/app/index.tsx",
         output: {
             path: path.resolve(__dirname, "build"),
             filename: "[name].[contenthash].js",
-            clean: true
         },
         devServer: {
             static: {
-                directory: env.public_url
-            }
+                directory: env.public_url,
+            },
+            port: env.port
         },
         devtool: "inline-source-map",
         module: {
@@ -40,7 +45,10 @@ function createConfig(env: Environment): Configuration {
                 },
                 {
                     test: /\.css$/i,
-                    use: ["style-loader", "css-loader"],
+                    use: [
+                        isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+                        "css-loader"
+                    ],
                 },
             ]
         },
@@ -57,11 +65,12 @@ function createConfig(env: Environment): Configuration {
         plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, env.public_url, "index.html"),
-                templateParameters: {
-                    manifest: "./public/manifest.json"
-                }
+                favicon: path.resolve(__dirname, env.public_url, "icons/favicon.ico"),
+                inject: "head"
             }),
+            new MiniCssExtractPlugin(),
             new WebpackPwaManifest({
+                publicPath: "./",
                 name: "React App Sample",
                 short_name: "React App",
                 start_url: "/",
