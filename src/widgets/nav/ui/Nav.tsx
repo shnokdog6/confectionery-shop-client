@@ -13,7 +13,7 @@ export const Nav = () => {
     return (
         <StyledStack direction="horizontal">
             <StyledButtonsFlex direction="horizontal">
-                <OutlineButton onClick={() => setIsModalVisible(prevState => !prevState)}>
+                <OutlineButton onClick={() => setIsModalVisible(true)}>
                     Войти
                 </OutlineButton>
                 <OutlineButton>Зарегистрироваться</OutlineButton>

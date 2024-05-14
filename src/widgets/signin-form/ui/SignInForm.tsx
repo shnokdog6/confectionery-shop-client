@@ -5,8 +5,8 @@ import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
 
 
 export const StyledWrapper = styled.div`
-    padding: 20px;
     box-shadow: 0 0 2px 0 #000;
+    padding: 20px;
     border-radius: 20px;
     align-self: center;
     justify-self: center;
@@ -35,12 +35,10 @@ export const StyledButton = styled.button`
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 2px 0 #000;
-
     outline: none;
     background: black;
     color: white;
     font-weight: bold;
-
 `;
 
 export const SignInForm = () => {

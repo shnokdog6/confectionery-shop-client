@@ -9,7 +9,6 @@ export interface ModalProps extends PropsWithChildren {
 }
 
 export const Modal: FC<ModalProps> = ({ children, isVisible, setVisible }) => {
-
     function onClick() {
         setVisible(prevState => {
             return !prevState;
