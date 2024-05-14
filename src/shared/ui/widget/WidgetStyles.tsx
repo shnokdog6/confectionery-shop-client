@@ -13,4 +13,3 @@ export const StyledDiv = styled.div`
     margin-right: 33px;
     margin-left: 33px;
 `;
-

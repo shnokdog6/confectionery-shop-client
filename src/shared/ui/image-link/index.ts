@@ -1,1 +1,1 @@
-export {ImageLink, ImageLinkProps} from "./ImageLink"
+export { ImageLink, ImageLinkProps } from "./ImageLink";

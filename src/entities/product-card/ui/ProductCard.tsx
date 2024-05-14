@@ -1,7 +1,13 @@
 import { IProduct } from "@entities/product-card";
 import cake from "@images/card.png";
-import { FC } from 'react';
-import { StyledButton, StyledHeader, StyledImg, StyledSpan, StyledWrapper } from "./ProductCardStyles";
+import { FC } from "react";
+import {
+    StyledButton,
+    StyledHeader,
+    StyledImg,
+    StyledSpan,
+    StyledWrapper,
+} from "./ProductCardStyles";
 
 export interface ProductCardProps {
     src: IProduct;

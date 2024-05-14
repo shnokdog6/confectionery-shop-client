@@ -10,11 +10,11 @@ export const productListApi = baseApi.injectEndpoints({
         products: build.query<IProduct[], ProductParams>({
             query: (options) => ({
                 url: "/product",
-                params: options
+                params: options,
             }),
-            providesTags: [PRODUCT_TAG]
-        })
-    })
-})
+            providesTags: [PRODUCT_TAG],
+        }),
+    }),
+});
 
 export const { useProductsQuery } = productListApi;

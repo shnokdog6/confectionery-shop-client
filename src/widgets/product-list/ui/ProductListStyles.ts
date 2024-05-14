@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {Row, RowProps, Spinner} from "react-bootstrap";
-
+import { Row, RowProps, Spinner } from "react-bootstrap";
 
 export const StyledRow = styled(Row)<RowProps>`
     display: flex;
@@ -9,6 +8,4 @@ export const StyledRow = styled(Row)<RowProps>`
     min-height: 300px;
 `;
 
-export const StyledSpinner = styled(Spinner)`
-
-`;
+export const StyledSpinner = styled(Spinner)``;

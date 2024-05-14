@@ -1,1 +1,1 @@
-export {FixedNav} from "./ui/FixedNav"
+export { FixedNav } from "./ui/FixedNav";

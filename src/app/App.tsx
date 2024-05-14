@@ -1,9 +1,9 @@
-import React from 'react';
-import {createGlobalStyle} from "styled-components";
-import {RouterProvider} from "react-router-dom";
-import {AppRouter} from "./router";
-import {Provider} from "react-redux";
-import {appStore} from "./store";
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+import { RouterProvider } from "react-router-dom";
+import { AppRouter } from "./router";
+import { Provider } from "react-redux";
+import { appStore } from "./store";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -22,8 +22,8 @@ const GlobalStyles = createGlobalStyle`
 const App = () => {
     return (
         <Provider store={appStore}>
-            <GlobalStyles/>
-            <RouterProvider router={AppRouter}/>
+            <GlobalStyles />
+            <RouterProvider router={AppRouter} />
         </Provider>
     );
 };

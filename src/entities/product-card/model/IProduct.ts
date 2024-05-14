@@ -1,4 +1,4 @@
-import {ICategory} from "@entities/category/model/ICategory";
+import { ICategory } from "@entities/category/model/ICategory";
 
 export interface IProduct {
     id: number;

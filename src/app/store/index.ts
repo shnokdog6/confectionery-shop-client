@@ -1,1 +1,1 @@
-export { appStore, RootState, AppDispatch } from "./appStore"
+export { appStore, RootState, AppDispatch } from "./appStore";

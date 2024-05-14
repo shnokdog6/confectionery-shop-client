@@ -5,12 +5,11 @@ export const categoryListApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         category: build.query<ICategory[], void>({
             query: () => ({
-                url: "/category"
+                url: "/category",
             }),
-            providesTags: [CATEGORY_TAG]
-        })
-    })
+            providesTags: [CATEGORY_TAG],
+        }),
+    }),
 });
 
 export const { useCategoryQuery } = categoryListApi;
-

@@ -1,5 +1,5 @@
-import React, {FC, LinkHTMLAttributes} from 'react';
-import {StyledLink} from './ImageLinkStyles';
+import React, { FC, LinkHTMLAttributes } from "react";
+import { StyledLink } from "./ImageLinkStyles";
 
 export interface ImageLinkProps extends LinkHTMLAttributes<HTMLLinkElement> {
     width: number;
@@ -7,7 +7,5 @@ export interface ImageLinkProps extends LinkHTMLAttributes<HTMLLinkElement> {
     src: string;
 }
 export const ImageLink: FC<ImageLinkProps> = (props) => {
-    return (
-        <StyledLink {...props}/>
-    );
+    return <StyledLink {...props} />;
 };

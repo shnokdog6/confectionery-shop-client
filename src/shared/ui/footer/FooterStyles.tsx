@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {HtmlHTMLAttributes} from "react";
-import {Container} from "react-bootstrap";
+import { HtmlHTMLAttributes } from "react";
+import { Container } from "react-bootstrap";
 
 export const StyledFooter = styled.footer<HtmlHTMLAttributes<HTMLElement>>`
     width: 100%;
@@ -26,4 +26,3 @@ export const StyledDiv = styled.div`
     color: #8191a6;
     line-height: 100%;
 `;
-

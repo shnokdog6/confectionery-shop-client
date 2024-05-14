@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import {ButtonHTMLAttributes} from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export const StyledButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
+export const StyledButton = styled.button<
+    ButtonHTMLAttributes<HTMLButtonElement>
+>`
     color: white;
     border: 2px solid #fff;
     border-radius: 15px;
@@ -11,7 +13,7 @@ export const StyledButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement
     font-weight: 600;
     font-size: 15px;
     text-align: center;
-    
+
     &:hover {
         color: black;
         background-color: white;

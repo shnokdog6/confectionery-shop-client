@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
-import {Stack, StackProps} from "react-bootstrap";
+import { Stack, StackProps } from "react-bootstrap";
 
 export const StyledWrapper = styled(ScrollContainer)`
     margin: 30px 0;

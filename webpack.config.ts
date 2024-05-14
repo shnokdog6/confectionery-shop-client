@@ -1,7 +1,7 @@
-import {Configuration} from "webpack";
+import { Configuration } from "webpack";
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import "webpack-dev-server"
+import "webpack-dev-server";
 import WebpackPwaManifest from "webpack-pwa-manifest";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
@@ -12,7 +12,6 @@ interface Environment {
 }
 
 function createConfig(env: Environment): Configuration {
-
     let isDev: boolean = env.mode === "development";
 
     return {
@@ -26,7 +25,7 @@ function createConfig(env: Environment): Configuration {
             static: {
                 directory: env.public_url,
             },
-            port: env.port
+            port: env.port,
         },
         devtool: "inline-source-map",
         module: {
@@ -34,39 +33,43 @@ function createConfig(env: Environment): Configuration {
                 {
                     test: /\.tsx?$/,
                     use: "ts-loader",
-                    exclude: "/node_modules/"
+                    exclude: "/node_modules/",
                 },
                 {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: 'asset/resource',
+                    type: "asset/resource",
                     generator: {
-                        filename: `${env.public_url}/images/[hash][ext]`
-                    }
+                        filename: `${env.public_url}/images/[hash][ext]`,
+                    },
                 },
                 {
                     test: /\.css$/i,
                     use: [
                         isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-                        "css-loader"
+                        "css-loader",
                     ],
                 },
-            ]
+            ],
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
+            extensions: [".tsx", ".ts", ".js"],
             alias: {
-                "@images" : path.resolve(__dirname, "public/images"),
-                "@shared" : path.resolve(__dirname, "src/shared"),
-                "@widgets" : path.resolve(__dirname, "src/widgets"),
-                "@entities" : path.resolve(__dirname, "src/entities"),
-                "@pages" : path.resolve(__dirname, "src/pages"),
-            }
+                "@images": path.resolve(__dirname, "public/images"),
+                "@shared": path.resolve(__dirname, "src/shared"),
+                "@widgets": path.resolve(__dirname, "src/widgets"),
+                "@entities": path.resolve(__dirname, "src/entities"),
+                "@pages": path.resolve(__dirname, "src/pages"),
+            },
         },
         plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, env.public_url, "index.html"),
-                favicon: path.resolve(__dirname, env.public_url, "icons/favicon.ico"),
-                inject: "head"
+                favicon: path.resolve(
+                    __dirname,
+                    env.public_url,
+                    "icons/favicon.ico",
+                ),
+                inject: "head",
             }),
             new MiniCssExtractPlugin(),
             new WebpackPwaManifest({
@@ -80,28 +83,40 @@ function createConfig(env: Environment): Configuration {
                 ios: true,
                 icons: [
                     {
-                        src: path.resolve(__dirname, env.public_url, "icons/favicon.ico"),
+                        src: path.resolve(
+                            __dirname,
+                            env.public_url,
+                            "icons/favicon.ico",
+                        ),
                         sizes: [16, 24, 32, 64],
                         type: "image/x-icon",
-                        destination: path.join(env.public_url ,"icons")
+                        destination: path.join(env.public_url, "icons"),
                     },
                     {
-                        src: path.resolve(__dirname, env.public_url, "icons/logo192.png"),
+                        src: path.resolve(
+                            __dirname,
+                            env.public_url,
+                            "icons/logo192.png",
+                        ),
                         size: "192x192",
                         type: "image/png",
-                        destination: path.join(env.public_url ,"icons"),
-                        ios: true
+                        destination: path.join(env.public_url, "icons"),
+                        ios: true,
                     },
                     {
-                        src: path.resolve(__dirname, env.public_url, "icons/logo512.png"),
+                        src: path.resolve(
+                            __dirname,
+                            env.public_url,
+                            "icons/logo512.png",
+                        ),
                         size: "512x512",
                         type: "image/png",
-                        destination: path.join(env.public_url ,"icons")
-                    }
-                ]
-            })
+                        destination: path.join(env.public_url, "icons"),
+                    },
+                ],
+            }),
         ],
-    }
+    };
 }
 
 export default createConfig(process.env as unknown as Environment);

@@ -1,2 +1,2 @@
-export {Flex} from "./Flex"
-export {FlexProps} from "./Flex"
+export { Flex } from "./Flex";
+export { FlexProps } from "./Flex";

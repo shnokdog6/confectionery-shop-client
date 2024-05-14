@@ -8,10 +8,10 @@ import { StyledWrapper } from "./MainPageStyles";
 export const MainPage = () => {
     return (
         <StyledWrapper>
-            <Header/>
-            <FixedNav/>
-            <ProductList/>
-            <Footer/>
+            <Header />
+            <FixedNav />
+            <ProductList />
+            <Footer />
         </StyledWrapper>
     );
 };

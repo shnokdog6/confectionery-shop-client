@@ -9,16 +9,16 @@ export const StyledInput = styled.input`
     background: transparent;
     outline: none;
     padding: 10px 44px;
-    
+
     &::placeholder {
         color: white;
     }
-    
+
     @media (max-width: 991px) {
         width: 50px;
         padding: 10px;
-        
-        &::placeholder{
+
+        &::placeholder {
             color: transparent;
         }
     }

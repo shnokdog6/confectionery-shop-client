@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import cake from "@images/card.png"
+import cake from "@images/card.png";
 
 export const StyledWrapper = styled.div`
     position: relative;

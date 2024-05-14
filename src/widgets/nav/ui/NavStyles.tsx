@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Stack, StackProps} from "react-bootstrap";
+import { Stack, StackProps } from "react-bootstrap";
 
 export const StyledButtonsFlex = styled(Stack)<StackProps>`
     gap: 10px;

@@ -1,26 +1,26 @@
 {
-  "compilerOptions": {
-    "outDir": "./build/",
-    "noImplicitAny": true,
-    "module": "ES6",
-    "target": "ES5",
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "paths": {
-      "@images/*" : ["./public/images/*"],
-      "@shared/*" : ["./src/shared/*"],
-      "@widgets/*" : ["./src/widgets/*"],
-      "@entities/*" : ["./src/entities/*"],
-      "@pages/*" : ["./src/pages/*"],
-    }
-  },
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-    }
-  },
-  "exclude": ["node_modules"],
+        "outDir": "./build/",
+        "noImplicitAny": true,
+        "module": "ES6",
+        "target": "ES5",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "paths": {
+            "@images/*": ["./public/images/*"],
+            "@shared/*": ["./src/shared/*"],
+            "@widgets/*": ["./src/widgets/*"],
+            "@entities/*": ["./src/entities/*"],
+            "@pages/*": ["./src/pages/*"]
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "exclude": ["node_modules"]
 }
