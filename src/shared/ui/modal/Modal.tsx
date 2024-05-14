@@ -1,6 +1,5 @@
 import React, { Dispatch, FC, PropsWithChildren, SetStateAction } from "react";
-import { StopPropagation } from "@shared/ui/stop-propagation";
-import { StyledWrapper } from "./ModalStyles";
+import { Modal as BootstrapModal } from "react-bootstrap";
 
 export interface ModalProps extends PropsWithChildren {
     isVisible: boolean;
@@ -8,18 +7,16 @@ export interface ModalProps extends PropsWithChildren {
 }
 
 export const Modal: FC<ModalProps> = ({ children, isVisible, setVisible }) => {
-
-
-    function onClick() {
-        setVisible(prevState => {
-            return !prevState;
-        })
-    }
-
-    return (isVisible &&
-        <StyledWrapper onClick={onClick}>
-            <StopPropagation>
+    return (
+        <BootstrapModal
+            show={isVisible}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            onHide={() => setVisible(false)}
+        >
+            <BootstrapModal.Body>
                 {children}
-            </StopPropagation>
-        </StyledWrapper>);
+            </BootstrapModal.Body>
+        </BootstrapModal>);
 };
