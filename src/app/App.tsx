@@ -1,9 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 import { RouterProvider } from "react-router-dom";
 import { AppRouter } from "./router";
-import { Provider } from "react-redux";
-import { appStore } from "./store";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -12,19 +10,19 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-family: "Inter", sans-serif;
     }
-    
+
     body, html, #root {
         height: 100vh;
     }
-    
+
 `;
 
 const App = () => {
     return (
-        <Provider store={appStore}>
+        <Fragment>
             <GlobalStyles />
             <RouterProvider router={AppRouter} />
-        </Provider>
+        </Fragment>
     );
 };
 

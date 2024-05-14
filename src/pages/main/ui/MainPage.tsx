@@ -3,15 +3,15 @@ import { Header } from "@shared/ui/header";
 import { CategoriesList } from "@widgets/categories-selection";
 import { FixedNav } from "@widgets/fixed-nav/ui/FixedNav";
 import { ProductList } from "@widgets/product-list";
-import { StyledWrapper } from "./MainPageStyles";
+import { PageWrapper } from "@shared/ui/page-wrapper";
 
 export const MainPage = () => {
     return (
-        <StyledWrapper>
+        <PageWrapper>
             <Header />
             <FixedNav />
             <ProductList />
             <Footer />
-        </StyledWrapper>
+        </PageWrapper>
     );
 };

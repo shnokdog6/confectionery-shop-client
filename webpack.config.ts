@@ -26,6 +26,7 @@ function createConfig(env: Environment): Configuration {
                 directory: env.public_url,
             },
             port: env.port,
+            historyApiFallback: true
         },
         devtool: "inline-source-map",
         module: {

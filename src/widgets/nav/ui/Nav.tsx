@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledButtonsFlex, StyledStack } from "./NavStyles";
 import { Search } from "@shared/ui/search";
 import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "@shared/ui/modal";
+import { SignInForm } from "@widgets/signin-form";
 
 export const Nav = () => {
     const navigate = useNavigate();
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     return (
         <StyledStack direction="horizontal">
             <StyledButtonsFlex direction="horizontal">
-                <OutlineButton onClick={() => navigate("/signin")}>
+                <OutlineButton onClick={() => setIsModalVisible(prevState => !prevState)}>
                     Войти
                 </OutlineButton>
                 <OutlineButton>Зарегистрироваться</OutlineButton>
             </StyledButtonsFlex>
             <Search />
+            <Modal isVisible={isModalVisible} setVisible={setIsModalVisible}>
+                <SignInForm/>
+            </Modal>
         </StyledStack>
     );
 };
