@@ -1,8 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import { Button } from "@shared/ui/button";
-import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
-
 
 export const StyledWrapper = styled.div`
     box-shadow: 0 0 2px 0 #000;
@@ -40,14 +36,3 @@ export const StyledButton = styled.button`
     color: white;
     font-weight: bold;
 `;
-
-export const SignInForm = () => {
-    return (
-        <StyledWrapper>
-            <StyledInput placeholder="Телефон"/>
-            <StyledInput placeholder="Пароль"/>
-            <StyledButton>Войти</StyledButton>
-        </StyledWrapper>
-    );
-};
-

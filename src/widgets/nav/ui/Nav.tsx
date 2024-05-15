@@ -4,7 +4,7 @@ import { Search } from "@shared/ui/search";
 import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "@shared/ui/modal";
-import { SignInForm } from "@widgets/signin-form";
+import { SignIn } from "@entities/sign-in";
 
 export const Nav = () => {
     const navigate = useNavigate();
@@ -20,7 +20,7 @@ export const Nav = () => {
             </StyledButtonsFlex>
             <Search />
             <Modal isVisible={isModalVisible} setVisible={setIsModalVisible}>
-                <SignInForm/>
+                <SignIn/>
             </Modal>
         </StyledStack>
     );
