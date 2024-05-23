@@ -1,14 +1,15 @@
 import React from "react";
-import { StyledWrapper } from "./SignInStyles";
+import { StyledWrapper } from "./SignUpStyles";
 import { BlackButton } from "@shared/ui/black-button";
 import { Input } from "@shared/ui/input";
 
-export const SignIn = () => {
+export const SignUp = () => {
     return (
         <StyledWrapper>
             <Input placeholder="Телефон"/>
             <Input placeholder="Пароль"/>
-            <BlackButton>Войти</BlackButton>
+            <Input placeholder="Повторите пароль"/>
+            <BlackButton>Зарегистрироваться</BlackButton>
         </StyledWrapper>
     );
 };
