@@ -4,7 +4,7 @@ import { Search } from "@shared/ui/search";
 import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "@shared/ui/modal";
-import { SignIn } from "@entities/sign-in";
+import { SignIn } from "@features/sign-in";
 
 export const Nav = () => {
     const navigate = useNavigate();
