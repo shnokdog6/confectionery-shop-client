@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyledButtonsFlex, StyledStack } from "./NavStyles";
 import { Search } from "@shared/ui/search";
 import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
 import { useNavigate } from "react-router-dom";
-import { Modal } from "@shared/ui/modal";
 import { SignIn } from "@features/sign-in";
+import { useModal } from "@shared/ui/modal/useModal";
+import { SignUp } from "@features/sign-up";
 
 export const Nav = () => {
-    const navigate = useNavigate();
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const { placeholder: SignInPlaceholder, show: showSignIn } = useModal({ element: <SignIn /> });
+    const { placeholder: SignUpPlaceholder, show: showSignUp } = useModal({ element: <SignUp /> });
 
     return (
         <StyledStack direction="horizontal">
             <StyledButtonsFlex direction="horizontal">
-                <OutlineButton onClick={() => setIsModalVisible(true)}>
+                <OutlineButton onClick={showSignIn}>
                     Войти
                 </OutlineButton>
-                <OutlineButton>Зарегистрироваться</OutlineButton>
+                <OutlineButton onClick={showSignUp}>
+                    Зарегистрироваться
+                </OutlineButton>
             </StyledButtonsFlex>
             <Search />
-            <Modal isVisible={isModalVisible} setVisible={setIsModalVisible}>
-                <SignIn/>
-            </Modal>
+            {SignInPlaceholder}
+            {SignUpPlaceholder}
         </StyledStack>
     );
 };
