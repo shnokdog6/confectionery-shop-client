@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "@images/frame.png";
+import background from "@images/frame.png"
 import { HTMLAttributes } from "react";
 
 export const StyledHeader = styled.header<HTMLAttributes<HTMLElement>>`

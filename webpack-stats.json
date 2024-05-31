@@ -1,0 +1,98 @@
+{
+  "status": "done",
+  "assets": {
+    "favicon.ico": {
+      "name": "favicon.ico",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\favicon.ico"
+    },
+    "index.html": {
+      "name": "index.html",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\index.html"
+    },
+    "manifest.json": {
+      "name": "manifest.json",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\manifest.json"
+    },
+    "public/icons/icon_16x16.3e60803aa1f2da544211920dd5191a37.ico": {
+      "name": "public/icons/icon_16x16.3e60803aa1f2da544211920dd5191a37.ico",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_16x16.3e60803aa1f2da544211920dd5191a37.ico"
+    },
+    "public/icons/icon_192x192.83e859aeac76e27b669cbbcc7493a829.png": {
+      "name": "public/icons/icon_192x192.83e859aeac76e27b669cbbcc7493a829.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_192x192.83e859aeac76e27b669cbbcc7493a829.png"
+    },
+    "public/icons/icon_24x24.3e60803aa1f2da544211920dd5191a37.ico": {
+      "name": "public/icons/icon_24x24.3e60803aa1f2da544211920dd5191a37.ico",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_24x24.3e60803aa1f2da544211920dd5191a37.ico"
+    },
+    "public/icons/icon_32x32.3e60803aa1f2da544211920dd5191a37.ico": {
+      "name": "public/icons/icon_32x32.3e60803aa1f2da544211920dd5191a37.ico",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_32x32.3e60803aa1f2da544211920dd5191a37.ico"
+    },
+    "public/icons/icon_512x512.ef7896f88ee3dae56b882075e5ddbee1.png": {
+      "name": "public/icons/icon_512x512.ef7896f88ee3dae56b882075e5ddbee1.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_512x512.ef7896f88ee3dae56b882075e5ddbee1.png"
+    },
+    "public/icons/icon_64x64.3e60803aa1f2da544211920dd5191a37.ico": {
+      "name": "public/icons/icon_64x64.3e60803aa1f2da544211920dd5191a37.ico",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\public\\icons\\icon_64x64.3e60803aa1f2da544211920dd5191a37.ico"
+    },
+    "static/js/229.1889bdd3.chunk.js": {
+      "name": "static/js/229.1889bdd3.chunk.js",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\js\\229.1889bdd3.chunk.js"
+    },
+    "static/js/app.d39127ed.js": {
+      "name": "static/js/app.d39127ed.js",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\js\\app.d39127ed.js"
+    },
+    "static/js/vendors.3b44593a.js": {
+      "name": "static/js/vendors.3b44593a.js",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\js\\vendors.3b44593a.js"
+    },
+    "static/js/vendors.3b44593a.js.LICENSE.txt": {
+      "name": "static/js/vendors.3b44593a.js.LICENSE.txt",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\js\\vendors.3b44593a.js.LICENSE.txt"
+    },
+    "static/media/card.58283e040d3ead7130a6.png": {
+      "name": "static/media/card.58283e040d3ead7130a6.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\card.58283e040d3ead7130a6.png",
+      "sourceFilename": "src/shared/assets/images/card.png"
+    },
+    "static/media/frame.e2369ce7926dbf83b37c.png": {
+      "name": "static/media/frame.e2369ce7926dbf83b37c.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\frame.e2369ce7926dbf83b37c.png",
+      "sourceFilename": "src/shared/assets/images/frame.png"
+    },
+    "static/media/search.b185d2acd147caf9e137.png": {
+      "name": "static/media/search.b185d2acd147caf9e137.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\search.b185d2acd147caf9e137.png",
+      "sourceFilename": "src/shared/assets/images/search.png"
+    },
+    "static/media/telegram.954ffc99c189da8d1aaf.png": {
+      "name": "static/media/telegram.954ffc99c189da8d1aaf.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\telegram.954ffc99c189da8d1aaf.png",
+      "sourceFilename": "src/shared/assets/images/telegram.png"
+    },
+    "static/media/vk.6a58993f9405c5376034.png": {
+      "name": "static/media/vk.6a58993f9405c5376034.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\vk.6a58993f9405c5376034.png",
+      "sourceFilename": "src/shared/assets/images/vk.png"
+    },
+    "static/media/whatsapp.a870f305368bf4a96933.png": {
+      "name": "static/media/whatsapp.a870f305368bf4a96933.png",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\static\\media\\whatsapp.a870f305368bf4a96933.png",
+      "sourceFilename": "src/shared/assets/images/whatsapp.png"
+    },
+    "vendors.css": {
+      "name": "vendors.css",
+      "path": "C:\\Users\\is-21-1-klas\\Desktop\\confectionery-shop-client\\build\\vendors.css"
+    }
+  },
+  "chunks": {
+    "app": [
+      "vendors.css",
+      "static/js/vendors.3b44593a.js",
+      "static/js/app.d39127ed.js"
+    ]
+  }
+}

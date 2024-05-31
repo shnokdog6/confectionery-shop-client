@@ -10,7 +10,7 @@
         "jsx": "react-jsx",
         "allowJs": true,
         "paths": {
-            "@images/*": ["./public/images/*"],
+            "@images/*": ["./src/shared/assets/images/*"],
             "@shared/*": ["./src/shared/*"],
             "@widgets/*": ["./src/widgets/*"],
             "@entities/*": ["./src/entities/*"],

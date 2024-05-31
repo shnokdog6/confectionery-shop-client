@@ -4,7 +4,7 @@ import { Stack } from "react-bootstrap";
 import { ImageLink } from "@shared/ui/image-link";
 import whatsapp from "@images/whatsapp.png";
 import telegram from "@images/telegram.png";
-import vk from "@images/vk.png";
+import vk from "../../assets/images/vk.png";
 
 export const Footer: FC<HTMLAttributes<HTMLElement>> = (props) => {
     return (
