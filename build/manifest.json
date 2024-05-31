@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "src": "./public/icons/icon_512x512.ef7896f88ee3dae56b882075e5ddbee1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./public/icons/icon_192x192.83e859aeac76e27b669cbbcc7493a829.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./public/icons/icon_64x64.3e60803aa1f2da544211920dd5191a37.ico",
+      "sizes": "64x64",
+      "type": "image/vnd.microsoft.icon"
+    },
+    {
+      "src": "./public/icons/icon_32x32.3e60803aa1f2da544211920dd5191a37.ico",
+      "sizes": "32x32",
+      "type": "image/vnd.microsoft.icon"
+    },
+    {
+      "src": "./public/icons/icon_24x24.3e60803aa1f2da544211920dd5191a37.ico",
+      "sizes": "24x24",
+      "type": "image/vnd.microsoft.icon"
+    },
+    {
+      "src": "./public/icons/icon_16x16.3e60803aa1f2da544211920dd5191a37.ico",
+      "sizes": "16x16",
+      "type": "image/vnd.microsoft.icon"
+    }
+  ],
+  "name": "React App Sample",
+  "short_name": "React App",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
