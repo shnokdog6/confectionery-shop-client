@@ -1,6 +1,8 @@
 import React, { FC, HTMLAttributes } from "react";
-import { StyledHeader } from "./HeaderStyles";
+import { StyledHeader } from "./Header.module";
 
-export const Header: FC<HTMLAttributes<HTMLElement>> = (props) => {
+export interface HeaderProps extends HTMLAttributes<HTMLElement> {}
+
+export const Header: FC<HeaderProps> = (props) => {
     return <StyledHeader {...props} />;
 };

@@ -1,1 +1,1 @@
-export {StopPropagation} from "./StopPropagation"
+export { StopPropagation } from "./StopPropagation";

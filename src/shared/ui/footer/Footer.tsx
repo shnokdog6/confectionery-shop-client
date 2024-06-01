@@ -1,12 +1,16 @@
 import React, { FC, HTMLAttributes } from "react";
-import { StyledContainer, StyledDiv, StyledFooter } from "./FooterStyles";
+import { StyledContainer, StyledDiv, StyledFooter } from "./Footer.module";
 import { Stack } from "react-bootstrap";
 import { ImageLink } from "@shared/ui/image-link";
 import whatsapp from "@images/whatsapp.png";
 import telegram from "@images/telegram.png";
 import vk from "@images/vk.png";
 
-export const Footer: FC<HTMLAttributes<HTMLElement>> = (props) => {
+export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
+
+}
+
+export const Footer: FC<FooterProps> = (props) => {
     return (
         <StyledFooter {...props}>
             <StyledContainer>

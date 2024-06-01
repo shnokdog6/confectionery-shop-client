@@ -1,1 +1,1 @@
-export { BlackButton } from "./BlackButton";
+export { BlackButton, BlackButtonProps } from "./BlackButton";

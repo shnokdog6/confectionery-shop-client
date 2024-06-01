@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import "webpack-dev-server";
 import WebpackPwaManifest from "webpack-pwa-manifest";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 
 interface Environment {
     mode: "development" | "production";
@@ -12,7 +13,7 @@ interface Environment {
 }
 
 function createConfig(env: Environment): Configuration {
-    let isDev: boolean = env.mode === "development";
+    const isDev: boolean = env.mode === "development";
 
     return {
         mode: env.mode,
@@ -26,7 +27,7 @@ function createConfig(env: Environment): Configuration {
                 directory: env.public_url,
             },
             port: env.port,
-            historyApiFallback: true
+            historyApiFallback: true,
         },
         devtool: "inline-source-map",
         module: {
@@ -54,14 +55,7 @@ function createConfig(env: Environment): Configuration {
         },
         resolve: {
             extensions: [".tsx", ".ts", ".js"],
-            alias: {
-                "@images": path.resolve(__dirname, "public/images"),
-                "@shared": path.resolve(__dirname, "src/shared"),
-                "@widgets": path.resolve(__dirname, "src/widgets"),
-                "@entities": path.resolve(__dirname, "src/entities"),
-                "@features": path.resolve(__dirname, "src/features"),
-                "@pages": path.resolve(__dirname, "src/pages"),
-            },
+            plugins: [new TsconfigPathsPlugin()],
         },
         plugins: [
             new HtmlWebpackPlugin({

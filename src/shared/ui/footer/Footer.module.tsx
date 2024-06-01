@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { HtmlHTMLAttributes } from "react";
 import { Container } from "react-bootstrap";
+import { FooterProps } from "@shared/ui/footer/Footer";
 
-export const StyledFooter = styled.footer<HtmlHTMLAttributes<HTMLElement>>`
+export const StyledFooter = styled.footer<FooterProps>`
     width: 100%;
     min-height: 87px;
     background-color: black;

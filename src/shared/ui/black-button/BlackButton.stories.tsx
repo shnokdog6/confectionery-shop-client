@@ -1,19 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@shared/ui/button";
+import { BlackButton } from "@shared/ui/black-button/BlackButton";
 
-const meta: Meta<typeof Button> = {
-    title: "shared/ui/Button",
-    component: Button,
+const meta: Meta<typeof BlackButton> = {
+    title: "shared/ui/BlackButton",
+    component: BlackButton,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof BlackButton>;
 
 export const Default: Story = {
     args: {
         children: "click me",
-        disabled: false,
     },
     parameters: {
         layout: "centered",

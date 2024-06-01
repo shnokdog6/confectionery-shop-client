@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, PropsWithChildren, SetStateAction, useEffect } from "react";
 import { StopPropagation } from "@shared/ui/stop-propagation";
-import { StyledWrapper } from "./ModalStyles";
+import { StyledWrapper } from "./Modal.module";
 import disableScroll from 'disable-scroll';
 
 export interface ModalProps extends PropsWithChildren {

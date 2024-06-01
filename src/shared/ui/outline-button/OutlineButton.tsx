@@ -1,7 +1,9 @@
 import React, { ButtonHTMLAttributes, FC } from "react";
-import { StyledButton } from "./OutlineButtonStyles";
+import { StyledButton } from "./OutlineButton.module";
 
-export const OutlineButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = (
+export interface OutlineButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export const OutlineButton: FC<OutlineButtonProps> = (
     props,
 ) => {
     return <StyledButton {...props} />;
