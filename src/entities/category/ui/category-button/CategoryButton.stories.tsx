@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@shared/ui/button";
+import { CategoryButton } from "@entities/category/ui/category-button/index";
 
-const meta: Meta<typeof Button> = {
-    title: "shared/ui/Button",
-    component: Button,
+const meta: Meta<typeof CategoryButton> = {
+    title: "entities/category/CategoryButton",
+    component: CategoryButton,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof CategoryButton>;
 
 export const Default: Story = {
     args: {

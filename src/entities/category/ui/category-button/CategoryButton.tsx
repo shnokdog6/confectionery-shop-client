@@ -1,9 +1,9 @@
 import React, { ButtonHTMLAttributes, FC } from "react";
-import { StyledButton } from "./Button.module";
+import { StyledButton } from "./CategoryButton.module";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const CategoryButton: FC<ButtonProps> = (props) => {
     return <StyledButton {...props} />;
 };

@@ -1,12 +1,14 @@
-import { ReactElement, ReactNode, useState } from "react";
+import React, { ReactElement, ReactNode, useState } from "react";
 import { Modal } from "@shared/ui/modal/Modal";
 
 export type ModalHookResponse = [
     ReactElement,
-    () => void
+    () => void,
+    () => void,
 ] & {
     placeholder: ReactElement;
     show: () => void;
+    hide: () => void;
 };
 
 export interface ModalOption {
@@ -21,10 +23,12 @@ export function useModal(options: ModalOption): ModalHookResponse {
             {options.element}
         </Modal>,
         () => setVisible(true),
+        () => setVisible(false),
     ] as ModalHookResponse;
 
     result.placeholder = result[0];
     result.show = result[1];
+    result.hide = result[2];
 
     return result;
 }

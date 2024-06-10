@@ -1,6 +1,6 @@
 import { ICategory } from "@entities/category/model/ICategory";
-import { Button } from "@shared/ui/button";
-import { FC, memo } from "react";
+import { CategoryButton } from "@entities/category/ui/category-button";
+import React, { FC, memo } from "react";
 import { useCategoryQuery } from "../api/categoryListApi";
 import { StyledStack, StyledWrapper } from "./CategoriesListStyles";
 
@@ -17,9 +17,9 @@ export const CategoriesList: FC<CategoriesListProps> = memo(({ onChange }) => {
         <StyledWrapper>
             <StyledStack direction="horizontal">
                 {data?.map((item) => (
-                    <Button onClick={() => onChange?.(item)} key={item.id}>
+                    <CategoryButton onClick={() => onChange?.(item)} key={item.id}>
                         {item.name}
-                    </Button>
+                    </CategoryButton>
                 ))}
             </StyledStack>
         </StyledWrapper>

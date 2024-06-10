@@ -1,11 +1,10 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi } from "@reduxjs/toolkit/query/react";
 import { CATEGORY_TAG, PRODUCT_TAG } from "./tags";
+import { baseQueryWithReauth } from "@shared/api/baseQueryWithReauth";
 
 export const baseApi = createApi({
     reducerPath: "api",
     tagTypes: [PRODUCT_TAG, CATEGORY_TAG],
-    baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:3000",
-    }),
-    endpoints: () => ({}),
+    baseQuery: baseQueryWithReauth,
+    endpoints: () => ({})
 });
