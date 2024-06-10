@@ -1,5 +1,5 @@
 import { baseApi, PRODUCT_TAG } from "@shared/api";
-import { IProduct } from "@entities/product-card";
+import { IProduct } from "@entities/product";
 
 export interface ProductParams {
     category?: number;

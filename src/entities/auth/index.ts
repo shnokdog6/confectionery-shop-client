@@ -1,2 +1,3 @@
 export { AuthSlice, setAccessToken } from "./model/slice";
-export { AuthState } from "./model/types"
+export { useAuthGuard } from "./lib/useAuthGuard";
+export { AuthState } from "./model/types";

@@ -1,4 +1,4 @@
-import { IProduct } from "@entities/product-card";
+import { IProduct } from "@entities/product";
 import cake from "@images/card.png";
 import { FC } from "react";
 import {

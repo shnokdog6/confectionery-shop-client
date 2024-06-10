@@ -19,6 +19,7 @@ export default [
         },
         rules: {
             "react/display-name": "off",
+            "react/prop-types": "off",
             "@typescript-eslint/no-unused-vars": "off",
             "@typescript-eslint/no-explicit-any": "warn",
             "@typescript-eslint/ban-types": "warn",
