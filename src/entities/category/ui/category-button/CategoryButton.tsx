@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, FC } from "react";
-import { StyledButton } from "./CategoryButton.module";
+import { StyledButton } from "./CategoryButton.styles";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
