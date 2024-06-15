@@ -1,11 +1,11 @@
 import { baseApi, PRODUCT_TAG } from "@shared/api";
-import { IProduct } from "@entities/product-card";
+import { IProduct } from "@entities/product";
 
 export interface ProductParams {
     category?: number;
 }
 
-export const productListApi = baseApi.injectEndpoints({
+export const assortmentListApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         products: build.query<IProduct[], ProductParams>({
             query: (options) => ({
@@ -17,4 +17,4 @@ export const productListApi = baseApi.injectEndpoints({
     }),
 });
 
-export const { useProductsQuery } = productListApi;
+export const { useProductsQuery } = assortmentListApi;

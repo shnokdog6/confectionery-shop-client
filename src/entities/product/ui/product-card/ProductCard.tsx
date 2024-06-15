@@ -1,13 +1,13 @@
-import { IProduct } from "@entities/product-card";
+import React, { FC } from "react";
+import { IProduct } from "@entities/product";
 import cake from "@images/card.png";
-import { FC } from "react";
 import {
     StyledButton,
     StyledHeader,
     StyledImg,
     StyledSpan,
     StyledWrapper,
-} from "./ProductCardStyles";
+} from "./ProductCard.styles";
 
 export interface ProductCardProps {
     src: IProduct;

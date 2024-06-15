@@ -1,12 +1,12 @@
-import { ProductCard } from "@entities/product-card";
-import { useProductsQuery } from "@widgets/product-list/api/ProductListApi";
-import { Col, Container, Spinner } from "react-bootstrap";
-import { StyledRow } from "./ProductListStyles";
-import { CategoriesList } from "@widgets/categories-selection";
-import { memo, useState } from "react";
+import React, { memo, useState } from "react";
+import { ProductList } from "@entities/product";
+import { useProductsQuery } from "../api/AssortmentListApi";
+import { Container, Spinner } from "react-bootstrap";
+import { StyledRow } from "./AssortmentList.styles";
 import { ICategory } from "@entities/category/model/ICategory";
+import {CategorySelection} from "@widgets/category-selection";
 
-export const ProductList = memo(() => {
+export const AssortmentList = memo(() => {
     const [category, setCategory] = useState<ICategory>(null);
     const { data, isLoading, isError, error } = useProductsQuery(
         { category: category?.id },
@@ -17,7 +17,7 @@ export const ProductList = memo(() => {
 
     return (
         <Container>
-            <CategoriesList onChange={setCategory} />
+            <CategorySelection onSelected={setCategory} />
             <StyledRow>
                 {isLoading && (
                     <Spinner animation="border" role="status">
@@ -31,14 +31,7 @@ export const ProductList = memo(() => {
                     </div>
                 )}
 
-                {data?.map((item) => (
-                    <Col xl={3} lg={4} md={6}>
-                        <ProductCard
-                            key={`${item.id}.${item.name}`}
-                            src={item}
-                        />
-                    </Col>
-                ))}
+                {data && <ProductList items={data}/>}
             </StyledRow>
         </Container>
     );
