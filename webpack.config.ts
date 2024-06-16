@@ -28,6 +28,7 @@ function createConfig(env: Environment): Configuration {
             },
             port: env.port,
             historyApiFallback: true,
+            hot: true,
         },
         devtool: "inline-source-map",
         module: {

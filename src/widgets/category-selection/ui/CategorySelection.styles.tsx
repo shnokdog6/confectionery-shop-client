@@ -3,7 +3,7 @@ import ScrollContainer from "react-indiana-drag-scroll";
 import { Stack, StackProps } from "react-bootstrap";
 
 export const StyledWrapper = styled(ScrollContainer)`
-    margin: 30px 0;
+    margin: 20px 0;
     min-height: 50px;
     position: relative;
 `;

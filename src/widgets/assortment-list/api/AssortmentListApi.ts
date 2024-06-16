@@ -7,10 +7,9 @@ export interface ProductParams {
 
 export const assortmentListApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        products: build.query<IProduct[], ProductParams>({
+        products: build.query<IProduct[], void>({
             query: (options) => ({
                 url: "/product",
-                params: options,
             }),
             providesTags: [PRODUCT_TAG],
         }),
