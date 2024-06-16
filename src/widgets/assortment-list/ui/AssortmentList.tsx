@@ -1,19 +1,15 @@
 import React, { memo, useState } from "react";
-import { ProductList } from "@entities/product";
+import { ProductCard, ProductList } from "@entities/product";
 import { useProductsQuery } from "../api/AssortmentListApi";
-import { Container, Spinner } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { StyledRow } from "./AssortmentList.styles";
 import { ICategory } from "@entities/category/model/ICategory";
-import {CategorySelection} from "@widgets/category-selection";
+import { CategorySelection } from "@widgets/category-selection";
+import { AddToBasket } from "@features/add-to-basket/ui/AddToBasket";
 
 export const AssortmentList = memo(() => {
     const [category, setCategory] = useState<ICategory>(null);
-    const { data, isLoading, isError, error } = useProductsQuery(
-        { category: category?.id },
-        {
-            //skip: category == null
-        },
-    );
+    const { data, isLoading, isError, error } = useProductsQuery();
 
     return (
         <Container>
@@ -31,7 +27,23 @@ export const AssortmentList = memo(() => {
                     </div>
                 )}
 
-                {data && <ProductList items={data}/>}
+                {data && (
+                    <Row className="d-flex justify-content-start align-items-center">
+                        {data.map((item) => (
+                            <Col
+                                key={`${item.id}.${item.name}`}
+                                xl={3}
+                                lg={4}
+                                md={6}
+                            >
+                                <ProductCard
+                                    src={item}
+                                    action={<AddToBasket product={item} />}
+                                />
+                            </Col>
+                        ))}
+                    </Row>
+                )}
             </StyledRow>
         </Container>
     );

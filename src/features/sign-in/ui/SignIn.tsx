@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledWrapper } from "./SignInStyles";
+import { StyledWrapper } from "./SignIn.styles";
 import { BlackButton } from "@shared/ui/black-button";
 import { Input } from "@shared/ui/input";
 import { useSignInMutation } from "@features/sign-in/api/SignInApi";

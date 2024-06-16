@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import cake from "@images/card.png";
 
 export const StyledWrapper = styled.div`
     position: relative;
@@ -43,16 +42,9 @@ export const StyledSpan = styled.span`
     right: 0;
 `;
 
-export const StyledButton = styled.button`
-    border: none;
-    border-radius: 20px;
+export const StyledAction = styled.div`
     width: 228px;
     height: 48px;
-    background: #000;
-    font-weight: 600;
-    font-size: 22px;
-    text-align: center;
-    color: #fff;
     position: absolute;
     top: 333px;
     left: 0;
