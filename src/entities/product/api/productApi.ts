@@ -11,7 +11,7 @@ export const productApi = baseApi.injectEndpoints({
         products: build.query<IProduct[], ProductParams>({
             query: ({ categories }) => ({
                 url: "/product",
-                body: {
+                params: {
                     ...(categories && {
                         categories: categories.map((category) => category.id),
                     }),
