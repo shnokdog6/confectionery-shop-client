@@ -1,5 +1,5 @@
 import { baseApi } from "@shared/api";
-import { IBasketProduct } from "@entities/basket-product";
+import { IBasketProduct } from "../models/IBasketProduct";
 
 const BasketPageApi = baseApi.injectEndpoints({
     endpoints: (build) => ({

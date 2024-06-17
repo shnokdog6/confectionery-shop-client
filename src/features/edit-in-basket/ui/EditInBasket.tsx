@@ -1,31 +1,15 @@
 import React, { FC, useState } from "react";
 import { Stack } from "react-bootstrap";
-import { IBasketProduct } from "@entities/basket-product";
-import styled from "styled-components";
+import { IBasketProduct } from "@entities/basket";
 import {
     useAddMutation,
     useDeleteMutation,
-} from "@features/edit-in-basket/api/EditInBasketApi";
+} from "../api/EditInBasketApi";
+import { StyledButton, StyledSpan } from "./EditInBasket.styles";
 
 export interface EditInBasketProps {
     product: IBasketProduct;
 }
-
-export const StyledSpan = styled.span`
-    font-size: 22px;
-    text-align: center;
-`;
-
-export const StyledButton = styled.button`
-    padding: 8px 16px;
-    border-radius: 10px;
-    background: transparent;
-    font-size: 20px;
-    outline: none;
-    border: none;
-    box-shadow: 0 0 2px 0 #000;
-    min-width: 45px;
-`;
 
 export const EditInBasket: FC<EditInBasketProps> = ({ product }) => {
     const [count, setCount] = useState(product.count);

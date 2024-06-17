@@ -1,7 +1,7 @@
+import { baseApi, CATEGORY_TAG } from "@shared/api";
 import { ICategory } from "@entities/category/model/ICategory";
-import { CATEGORY_TAG, baseApi } from "@shared/api";
 
-export const categorySelectionApi = baseApi.injectEndpoints({
+export const categoryApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         category: build.query<ICategory[], void>({
             query: () => ({
@@ -12,4 +12,4 @@ export const categorySelectionApi = baseApi.injectEndpoints({
     }),
 });
 
-export const { useCategoryQuery } = categorySelectionApi;
+export const { useCategoryQuery } = categoryApi;
