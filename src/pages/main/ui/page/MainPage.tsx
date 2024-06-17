@@ -1,11 +1,11 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { Footer } from "@shared/ui/footer";
 import { Header } from "@shared/ui/header";
 import { FixedNav } from "@widgets/fixed-nav/ui/FixedNav";
 import { PageWrapper } from "@shared/ui/page-wrapper";
-import { AssortmentList } from "@widgets/assortment-list";
+import { ProductList } from "../product-list/ProductList";
 import { StyledH1 } from "./MainPage.styles";
-import { Container } from "react-bootstrap";
 
 export const MainPage = () => {
     return (
@@ -16,7 +16,7 @@ export const MainPage = () => {
                 </Container>
             </Header>
             <FixedNav />
-            <AssortmentList />
+            <ProductList />
             <Footer />
         </PageWrapper>
     );

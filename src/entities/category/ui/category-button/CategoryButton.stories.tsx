@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CategoryButton } from "@entities/category/ui/category-button/index";
+import { CategoryButton } from "@entities/category";
 
 const meta: Meta<typeof CategoryButton> = {
     title: "entities/category/CategoryButton",

@@ -1,1 +1,1 @@
-export { BasketPage } from "./ui/BasketPage";
+export { BasketPage } from "./ui/page/BasketPage";
