@@ -25,6 +25,10 @@ export const Modal: FC<ModalProps> = ({ children, isVisible, setVisible }) => {
         isVisible ? disableScroll.on() : disableScroll.off();
     }, [isVisible]);
 
+    useEffect(() => {
+        return () => disableScroll.off();
+    }, []);
+
     return (
         isVisible && (
             <StyledWrapper onClick={onClick}>
