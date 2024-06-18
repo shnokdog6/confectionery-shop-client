@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { StyledButtonsFlex, StyledStack } from "./NavStyles";
+import { useNavigate } from "react-router-dom";
 import { Search } from "@shared/ui/search";
-import { OutlineButton } from "@shared/ui/outline-button/OutlineButton";
+import { OutlineButton } from "@shared/ui/outline-button";
 import { SignIn } from "@features/sign-in";
-import { useModal } from "@shared/ui/modal/useModal";
+import { useModal } from "@shared/ui/modal";
 import { SignUp } from "@features/sign-up";
 import { useAppSelector } from "@shared/api";
 import { selectIsAuthorized } from "@entities/auth/model/slice";
-import { useNavigate } from "react-router-dom";
+import { StyledButtonsFlex, StyledStack } from "./NavStyles";
+
 
 export const Nav = () => {
     const navigate = useNavigate();

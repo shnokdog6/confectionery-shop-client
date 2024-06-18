@@ -1,1 +1,2 @@
-export {Modal, ModalProps} from "./Modal"
+export { Modal, ModalProps } from "./ui/Modal";
+export { useModal } from "./lib/hook/useModal";

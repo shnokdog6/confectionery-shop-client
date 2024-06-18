@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode, useState } from "react";
-import { Modal } from "@shared/ui/modal/Modal";
+import { Modal } from "@shared/ui/modal/ui/Modal";
 
 export type ModalHookResponse = [
     ReactElement,
