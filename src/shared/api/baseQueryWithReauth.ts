@@ -1,8 +1,6 @@
 import { BaseQueryApi, FetchArgs } from "@reduxjs/toolkit/query";
 import { baseQuery } from "@shared/api/baseQuery";
-import { setAccessToken } from "@entities/auth";
-
-type RefreshResponse = { accessToken: string };
+import { setData, resetData, AuthResponse } from "@entities/auth";
 
 export async function baseQueryWithReauth(
     args: string | FetchArgs,
@@ -14,10 +12,10 @@ export async function baseQueryWithReauth(
     if (result.error && result.error.status === 401) {
         const { data } = await baseQuery("/auth/update", api, extraOptions);
         if (data) {
-            api.dispatch(setAccessToken((data as RefreshResponse).accessToken));
+            api.dispatch(setData(data as AuthResponse));
             result = await baseQuery(args, api, extraOptions);
         } else {
-            api.dispatch(setAccessToken(null))
+            api.dispatch(resetData());
         }
     }
 

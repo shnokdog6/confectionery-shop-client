@@ -1,5 +1,5 @@
 import { baseApi } from "@shared/api";
-import { AuthState, setAccessToken } from "@entities/auth";
+import { AuthResponse, setData, resetData } from "@entities/auth";
 
 export interface SignUpBody {
     phoneNumber: string;
@@ -8,7 +8,7 @@ export interface SignUpBody {
 
 const SignUpApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        signUp: build.mutation<AuthState, SignUpBody>({
+        signUp: build.mutation<AuthResponse, SignUpBody>({
             query: (body) => ({
                 url: "/auth/register",
                 method: "POST",
@@ -17,9 +17,9 @@ const SignUpApi = baseApi.injectEndpoints({
             onQueryStarted: async (body, { dispatch, queryFulfilled }) => {
                 try {
                     const { data } = await queryFulfilled;
-                    dispatch(setAccessToken(data.accessToken));
+                    dispatch(setData(data));
                 } catch (e) {
-                    dispatch(setAccessToken(null));
+                    dispatch(resetData());
                 }
             },
         }),
