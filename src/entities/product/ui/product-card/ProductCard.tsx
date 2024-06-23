@@ -10,7 +10,7 @@ import {
 } from "./ProductCard.styles";
 
 export interface ProductCardProps {
-    src: IProduct;
+    src: Pick<IProduct, "name" | "cost" | "preview">;
     action?: ReactNode;
 }
 
