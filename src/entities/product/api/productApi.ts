@@ -1,6 +1,7 @@
 import { baseApi, PRODUCT_TAG } from "@shared/api";
 import { IProduct } from "@entities/product";
 import { ICategory } from "@entities/category";
+import { BaseQueryArg } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 
 export interface ProductParams {
     categories?: ICategory[];
@@ -18,6 +19,11 @@ export const productApi = baseApi.injectEndpoints({
                 },
             }),
             providesTags: [PRODUCT_TAG],
+        }),
+        product: build.query<IProduct, number>({
+            query: (id) => ({
+                url: `/product/${id}`,
+            }),
         }),
     }),
 });
