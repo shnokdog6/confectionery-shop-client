@@ -1,9 +1,9 @@
 import { baseApi } from "@shared/api";
-import { IProduct } from "@entities/product";
+import { IBasketProduct } from "@entities/basket";
 
 const EditInBasketApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        add: build.mutation<void, IProduct>({
+        add: build.mutation<void, Pick<IBasketProduct, "id" | "count">>({
             query: (product) => ({
                 url: "/basket",
                 method: "PATCH",
@@ -12,7 +12,7 @@ const EditInBasketApi = baseApi.injectEndpoints({
                 },
             }),
         }),
-        delete: build.mutation<void, IProduct>({
+        delete: build.mutation<void, Pick<IBasketProduct, "id" | "count">>({
             query: (product) => ({
                 url: "/basket",
                 method: "DELETE",
