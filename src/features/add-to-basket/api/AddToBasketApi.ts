@@ -3,7 +3,7 @@ import { IProduct } from "@entities/product";
 
 const AddToBasketApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        addToBasket: build.mutation<object, IProduct>({
+        addToBasket: build.mutation<object, Omit<IProduct, "details">>({
             query: (product) => ({
                 url: "basket",
                 method: "PATCH",
