@@ -6,4 +6,8 @@ export interface IProduct {
     name: string;
     cost: number;
     categories: ICategory[];
+    details: {
+        description: string;
+        compound: string;
+    }
 }
