@@ -8,7 +8,7 @@ export interface ProductParams {
 
 export const productApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        products: build.query<IProduct[], ProductParams>({
+        products: build.query<Omit<IProduct, "details">[], ProductParams>({
             query: ({ categories }) => ({
                 url: "/product",
                 params: {
