@@ -4,7 +4,7 @@ import { useAddToBasketMutation } from "@features/add-to-basket/api/AddToBasketA
 import { IProduct } from "@entities/product";
 
 export interface AddToBasketProps {
-    product?: IProduct;
+    product?: Omit<IProduct, "details">;
 }
 
 export const AddToBasket: FC<AddToBasketProps> = ({ product }) => {
