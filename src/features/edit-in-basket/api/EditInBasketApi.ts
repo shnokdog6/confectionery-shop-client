@@ -6,9 +6,9 @@ const EditInBasketApi = baseApi.injectEndpoints({
         add: build.mutation<void, Pick<IBasketProduct, "id" | "count">>({
             query: (product) => ({
                 url: "/basket",
-                method: "PATCH",
+                method: "POST",
                 body: {
-                    products: [{ id: product.id, count: 1 }],
+                    products: { id: product.id, count: 1 },
                 },
             }),
         }),
@@ -17,7 +17,7 @@ const EditInBasketApi = baseApi.injectEndpoints({
                 url: "/basket",
                 method: "DELETE",
                 body: {
-                    products: [{ id: product.id, count: 1 }],
+                    products: { id: product.id, count: 1 },
                 },
             }),
         }),
