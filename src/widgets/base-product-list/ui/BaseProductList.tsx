@@ -4,10 +4,10 @@ import { IProduct, ProductCard } from "@entities/product";
 import { StyledRow } from "./BaseProductList.styles";
 
 export interface BaseProductListProps {
-    items: IProduct[];
+    items: Array<Omit<IProduct, "details">>;
     isLoading?: boolean;
     isError?: boolean;
-    productCardAction: (product: IProduct) => ReactNode;
+    productCardAction: (product: Omit<IProduct, "details">) => ReactNode;
 }
 
 export const BaseProductList: FC<BaseProductListProps> = ({
