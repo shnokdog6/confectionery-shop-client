@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { Dispatch, forwardRef, useEffect, useState } from "react";
 import {
     StyledDecrementButton,
     StyledDiv,
@@ -7,29 +7,29 @@ import {
 } from "./Counter.styles";
 
 export interface CounterProps {
-    onValueChanged?: (value: number) => void;
+    min?: number;
+    max?: number;
+    value: number;
+    setValue: Dispatch<React.SetStateAction<number>>;
 }
 
 export const Counter = forwardRef<HTMLDivElement, CounterProps>(
-    ({ onValueChanged }, ref) => {
-        const [counter, setCounter] = useState(0);
-
-        useEffect(() => {
-            onValueChanged?.(counter);
-        }, [counter]);
+    ({ min = 0, max = 99, value, setValue }, ref) => {
 
         return (
             <StyledDiv ref={ref}>
                 <StyledDecrementButton
                     onClick={() =>
-                        setCounter((prev) => (prev < 1 ? 0 : prev - 1))
+                        setValue((prev) => (prev === min ? min : prev - 1))
                     }
                 >
                     -
                 </StyledDecrementButton>
-                <StyledSpan>{counter}</StyledSpan>
+                <StyledSpan>{value}</StyledSpan>
                 <StyledIncrementButton
-                    onClick={() => setCounter((prev) => prev + 1)}
+                    onClick={() =>
+                        setValue((prev) => (prev === max ? max : prev + 1))
+                    }
                 >
                     +
                 </StyledIncrementButton>

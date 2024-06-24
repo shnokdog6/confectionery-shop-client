@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useRef, useState } from "react";
 import { FixedWidget } from "@shared/ui/fixed-widget";
 import { Spinner, Stack } from "react-bootstrap";
 import { Counter } from "@shared/ui/counter";
@@ -24,6 +24,8 @@ export const ProductActions: FC<ProductActionsProps> = ({
     isLoading,
     isError,
 }) => {
+    const [count, setCount] = useState(1);
+
     return (
         <FixedWidget pinned={pinned}>
             <StyledContainer>
@@ -32,13 +34,24 @@ export const ProductActions: FC<ProductActionsProps> = ({
                     {isError && (
                         <div className="w-auto">Не удалось загрузить товар</div>
                     )}
-                    {product && <Counter />}
+                    {product && (
+                        <Counter
+                            min={1}
+                            max={10}
+                            value={count}
+                            setValue={setCount}
+                        />
+                    )}
                 </StyledWrapper>
                 {product && (
                     <Stack direction="horizontal" gap={1}>
                         <StyledSpan>{product.cost}₽</StyledSpan>
                         <StyledAddToBasket>
-                            <AddToBasket product={product} />
+                            <AddToBasket
+                                product={product}
+                                count={count}
+                                onClick={() => setCount(1)}
+                            />
                         </StyledAddToBasket>
                     </Stack>
                 )}
