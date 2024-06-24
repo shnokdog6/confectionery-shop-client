@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { MainPage } from "@pages/main";
 import { ProductPage } from "@pages/product";
@@ -16,6 +16,14 @@ function AuthGuard({ children }: PropsWithChildren) {
     return children;
 }
 
+function ScrollToTop({ children }: PropsWithChildren) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return children;
+}
+
 export const AppRouter = createBrowserRouter([
     {
         path: "/",
@@ -23,7 +31,11 @@ export const AppRouter = createBrowserRouter([
     },
     {
         path: "/product/:productId",
-        element: <ProductPage />,
+        element: (
+            <ScrollToTop>
+                <ProductPage />
+            </ScrollToTop>
+        ),
     },
     {
         path: "/basket",
