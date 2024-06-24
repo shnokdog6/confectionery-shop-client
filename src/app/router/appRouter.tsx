@@ -1,6 +1,7 @@
-import React, { PropsWithChildren, ReactElement } from "react";
-import { createBrowserRouter, Navigate, useNavigate } from "react-router-dom";
+import React, { PropsWithChildren } from "react";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { MainPage } from "@pages/main";
+import { ProductPage } from "@pages/product";
 import { BasketPage } from "@pages/basket";
 import { useAppSelector } from "@shared/api";
 import { selectIsAuthorized } from "@entities/auth/model/slice";
@@ -19,6 +20,10 @@ export const AppRouter = createBrowserRouter([
     {
         path: "/",
         element: <MainPage />,
+    },
+    {
+        path: "/product/:productId",
+        element: <ProductPage />,
     },
     {
         path: "/basket",
