@@ -8,19 +8,23 @@ import {
     StyledSpan,
     StyledWrapper,
 } from "./ProductCard.styles";
+import { StopPropagation } from "@shared/ui/stop-propagation";
 
 export interface ProductCardProps {
-    src: Pick<IProduct, "name" | "cost" | "preview">;
+    src: Pick<IProduct, "id" | "name" | "cost" | "preview">;
+    onClick?: (productID: number) => void;
     action?: ReactNode;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({ src, action }) => {
+export const ProductCard: FC<ProductCardProps> = ({ src, onClick, action }) => {
     return (
-        <StyledWrapper>
+        <StyledWrapper onClick={() => onClick?.(src.id)}>
             <StyledImg src={cake} />
             <StyledHeader>{src.name}</StyledHeader>
             <StyledSpan>{src.cost}₽</StyledSpan>
-            <StyledAction>{action}</StyledAction>
+            <StyledAction>
+                <StopPropagation>{action}</StopPropagation>
+            </StyledAction>
         </StyledWrapper>
     );
 };

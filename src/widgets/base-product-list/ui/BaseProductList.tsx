@@ -7,6 +7,7 @@ export interface BaseProductListProps {
     items: Array<Omit<IProduct, "details">>;
     isLoading?: boolean;
     isError?: boolean;
+    onCardClick?: (productID: number) => void;
     productCardAction: (product: Omit<IProduct, "details">) => ReactNode;
 }
 
@@ -14,6 +15,7 @@ export const BaseProductList: FC<BaseProductListProps> = ({
     items,
     isLoading,
     isError,
+    onCardClick,
     productCardAction,
 }) => {
     return (
@@ -36,6 +38,7 @@ export const BaseProductList: FC<BaseProductListProps> = ({
                             >
                                 <ProductCard
                                     src={item}
+                                    onClick={onCardClick}
                                     action={productCardAction(item)}
                                 />
                             </Col>
