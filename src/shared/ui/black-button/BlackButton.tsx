@@ -1,11 +1,11 @@
-import React, {ButtonHTMLAttributes, FC} from 'react';
-import { StyledButton } from './BlackButton.styles';
+import React, { ButtonHTMLAttributes, forwardRef } from "react";
+import { StyledButton } from "./BlackButton.styles";
 
-export interface BlackButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-}
+export interface BlackButtonProps
+    extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const BlackButton: FC<BlackButtonProps> = (props) => {
-    return (
-        <StyledButton {...props}/>
-    );
-};
+export const BlackButton = forwardRef<HTMLButtonElement, BlackButtonProps>(
+    (props, ref) => {
+        return <StyledButton {...props} ref={ref} />;
+    },
+);
