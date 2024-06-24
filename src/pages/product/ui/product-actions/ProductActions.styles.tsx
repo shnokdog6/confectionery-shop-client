@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import basket from "@images/basket.png"
+import { Container } from "react-bootstrap";
+
+export const StyledContainer = styled(Container)`
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    min-height: 74px;
+`;
 
 export const StyledWrapper = styled.div`
     position: absolute;

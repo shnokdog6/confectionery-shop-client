@@ -1,9 +1,10 @@
 import React, { FC } from "react";
 import { FixedWidget } from "@shared/ui/fixed-widget";
-import { Container, Spinner, Stack } from "react-bootstrap";
+import { Spinner, Stack } from "react-bootstrap";
 import { Counter } from "@shared/ui/counter";
 import {
     StyledAddToBasket,
+    StyledContainer,
     StyledSpan,
     StyledWrapper,
 } from "./ProductActions.styles";
@@ -25,7 +26,7 @@ export const ProductActions: FC<ProductActionsProps> = ({
 }) => {
     return (
         <FixedWidget pinned={pinned}>
-            <Container className="d-flex justify-content-end py-3">
+            <StyledContainer>
                 <StyledWrapper>
                     {isLoading && <Spinner animation="border" role="status" />}
                     {isError && (
@@ -41,7 +42,7 @@ export const ProductActions: FC<ProductActionsProps> = ({
                         </StyledAddToBasket>
                     </Stack>
                 )}
-            </Container>
+            </StyledContainer>
         </FixedWidget>
     );
 };

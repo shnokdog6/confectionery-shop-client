@@ -8,6 +8,7 @@ export const StyledContainer = styled(Container)`
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 554px;
 `;
 
 export const StyledDiv = styled.div`
