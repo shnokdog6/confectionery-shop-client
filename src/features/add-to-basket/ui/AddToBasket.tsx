@@ -5,13 +5,19 @@ import { IProduct } from "@entities/product";
 
 export interface AddToBasketProps {
     product?: Omit<IProduct, "details">;
+    count?: number;
 }
 
-export const AddToBasket: FC<AddToBasketProps> = ({ product }) => {
+export const AddToBasket: FC<AddToBasketProps> = ({ product, count }) => {
     const [addToBasket] = useAddToBasketMutation();
 
     return (
-        <BlackButton onClick={() => product && addToBasket(product)}>
+        <BlackButton
+            onClick={() =>
+                product &&
+                addToBasket({ productId: product.id, count: count || 1 })
+            }
+        >
             В корзину
         </BlackButton>
     );

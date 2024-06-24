@@ -1,15 +1,17 @@
 import { baseApi } from "@shared/api";
-import { IProduct } from "@entities/product";
+
+interface AddToBasketApiBody {
+    productId: number;
+    count: number;
+}
 
 const AddToBasketApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        addToBasket: build.mutation<object, Omit<IProduct, "details">>({
-            query: (product) => ({
+        addToBasket: build.mutation<object, AddToBasketApiBody>({
+            query: (body) => ({
                 url: "basket",
-                method: "PATCH",
-                body: {
-                    products: [{ id: product.id, count: 1 }],
-                },
+                method: "POST",
+                body
             }),
         }),
     }),
