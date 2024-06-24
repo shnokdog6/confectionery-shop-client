@@ -11,7 +11,12 @@ const AddToBasketApi = baseApi.injectEndpoints({
             query: (body) => ({
                 url: "basket",
                 method: "POST",
-                body
+                body: {
+                    product: {
+                        id: body.productId,
+                        count: body.count,
+                    },
+                },
             }),
         }),
     }),
