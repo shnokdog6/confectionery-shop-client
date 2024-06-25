@@ -11,7 +11,7 @@ import {
 import { StopPropagation } from "@shared/ui/stop-propagation";
 
 export interface ProductCardProps {
-    src: Pick<IProduct, "id" | "name" | "cost" | "preview">;
+    src: IProduct;
     onClick?: (productID: number) => void;
     action?: ReactNode;
 }

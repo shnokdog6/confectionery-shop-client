@@ -8,10 +8,10 @@ import {
     StyledH1,
     StyledImage,
 } from "./ProductDetails.styles";
-import { IProduct } from "@entities/product";
+import { IDetailedProduct } from "@entities/product";
 
 export interface ProductDetailsProps {
-    product: IProduct;
+    product: IDetailedProduct;
     isLoading?: boolean;
     isError?: boolean;
 }

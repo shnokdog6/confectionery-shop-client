@@ -18,10 +18,10 @@ export interface IOrder {
     updatedAt: Date;
 }
 
-type OrderProduct = Omit<IProduct, "details" | "categories"> & {
+export interface IOrderProduct extends Omit<IProduct, "categories"> {
     count: number;
-};
+}
 
 export interface IDetailedOrder extends IOrder {
-    products: Array<OrderProduct>;
+    products: Array<IOrderProduct>;
 }

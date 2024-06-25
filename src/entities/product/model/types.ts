@@ -6,6 +6,9 @@ export interface IProduct {
     name: string;
     cost: number;
     categories: ICategory[];
+}
+
+export interface IDetailedProduct extends IProduct {
     details: {
         description: string;
         compound: string;

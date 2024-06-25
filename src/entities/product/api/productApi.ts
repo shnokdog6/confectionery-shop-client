@@ -1,5 +1,5 @@
 import { baseApi, PRODUCT_TAG } from "@shared/api";
-import { IProduct } from "@entities/product";
+import { IDetailedProduct, IProduct } from "@entities/product";
 import { ICategory } from "@entities/category";
 
 export interface ProductParams {
@@ -8,7 +8,7 @@ export interface ProductParams {
 
 export const productApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        products: build.query<Omit<IProduct, "details">[], ProductParams>({
+        products: build.query<IProduct[], ProductParams>({
             query: ({ categories }) => ({
                 url: "/product",
                 params: {
@@ -19,7 +19,7 @@ export const productApi = baseApi.injectEndpoints({
             }),
             providesTags: [PRODUCT_TAG],
         }),
-        product: build.query<IProduct, number>({
+        product: build.query<IDetailedProduct, number>({
             query: (id) => ({
                 url: `/product/${id}`,
             }),

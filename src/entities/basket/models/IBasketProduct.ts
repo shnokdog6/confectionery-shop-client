@@ -1,5 +1,5 @@
 import { IProduct } from "@entities/product";
 
-export interface IBasketProduct extends Omit<IProduct, "details"> {
+export interface IBasketProduct extends IProduct {
     count: number;
 }

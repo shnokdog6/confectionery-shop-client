@@ -8,7 +8,7 @@ import {
     StyledSpan,
     StyledWrapper,
 } from "./ProductActions.styles";
-import { IProduct } from "@entities/product";
+import { IDetailedProduct, IProduct } from "@entities/product";
 import { AddToBasket } from "@features/add-to-basket";
 
 export interface ProductActionsProps {
