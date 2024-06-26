@@ -1,6 +1,6 @@
 import { IProduct } from "@entities/product";
 
-export enum OrderStatus {
+export enum OrderStatusType {
     IN_PROCESSING = 1,
     CONFIRMED,
     COMPLETED,
