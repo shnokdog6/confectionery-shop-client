@@ -14,8 +14,8 @@ export interface IOrder {
         id: OrderStatus;
         name: string;
     };
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface IOrderProduct extends Omit<IProduct, "categories"> {
