@@ -50,8 +50,6 @@ export const StyledAction = styled.div`
     left: 0;
     right: 0;
     margin: 0 auto;
-    
-    * {
-        width: 100%;
-    }
+    display: flex;
+    justify-content: center;
 `;
