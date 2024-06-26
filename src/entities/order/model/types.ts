@@ -11,7 +11,7 @@ export interface IOrder {
     id: number;
     sum: number;
     status: {
-        id: OrderStatus;
+        id: OrderStatusType;
         name: string;
     };
     createdAt: string;
