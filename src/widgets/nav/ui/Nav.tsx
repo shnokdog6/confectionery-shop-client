@@ -48,6 +48,9 @@ export const Nav = () => {
                 <OutlineButton onClick={() => navigate("/basket")}>
                     Корзина
                 </OutlineButton>
+                <OutlineButton onClick={() => navigate("/orders")}>
+                    Заказы
+                </OutlineButton>
             </StyledButtonsFlex>
             <Search />
         </StyledStack>
