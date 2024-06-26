@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from "react";
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import { IProduct, ProductCard } from "@entities/product";
 import { StyledRow } from "./BaseProductList.styles";
+import { BaseContainer } from "@shared/ui/base-container";
 
 export interface BaseProductListProps {
     items: Array<IProduct>;
@@ -19,7 +20,7 @@ export const BaseProductList: FC<BaseProductListProps> = ({
     productCardAction,
 }) => {
     return (
-        <Container>
+        <BaseContainer>
             <StyledRow>
                 {isLoading && <Spinner animation="border" role="status" />}
 
@@ -46,6 +47,6 @@ export const BaseProductList: FC<BaseProductListProps> = ({
                     </Row>
                 )}
             </StyledRow>
-        </Container>
+        </BaseContainer>
     );
 };
