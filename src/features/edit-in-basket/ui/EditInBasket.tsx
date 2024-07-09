@@ -1,30 +1,27 @@
-import React, { FC, useState } from "react";
-import { Stack } from "react-bootstrap";
-import { IBasketProduct } from "@entities/basket";
-import { useAddMutation, useDeleteMutation } from "../api/EditInBasketApi";
-import { StyledButton, StyledSpan } from "./EditInBasket.styles";
+import React, { FC, useEffect, useRef, useState } from "react";
+import { Types, usePatchBasketMutation } from "@entities/basket";
 import { Counter } from "@shared/ui/counter";
 
 export interface EditInBasketProps {
-    product: IBasketProduct;
+    product: Types;
 }
 
 export const EditInBasket: FC<EditInBasketProps> = ({ product }) => {
     const [count, setCount] = useState(product.count);
-    const [addToBasketQuery] = useAddMutation();
-    const [deleteFromBasketQuery] = useDeleteMutation();
+    const countRef = useRef<number>(count);
+    const [patchBasketQuery] = usePatchBasketMutation();
 
-    async function addToBasket() {
-        const response = await addToBasketQuery(product);
-        if (response.error) return;
-        setCount((prev) => prev + 1);
-    }
+    useEffect(() => {
+        countRef.current = count;
+    }, [count]);
 
-    async function deleteFromBasket() {
-        const response = await deleteFromBasketQuery(product);
-        if (response.error) return;
-        setCount((prev) => prev - 1);
-    }
+    useEffect(() => {
+        return () => {
+            patchBasketQuery({
+                product: { id: product.id, count: countRef.current },
+            });
+        };
+    }, []);
 
     return <Counter min={1} max={10} value={count} setValue={setCount} />;
 };

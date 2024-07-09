@@ -1,8 +1,7 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 import { RouterProvider } from "react-router-dom";
 import { AppRouter } from "./router";
-import { baseQueryWithReauth } from "@shared/api/baseQueryWithReauth";
 
 const GlobalStyles = createGlobalStyle`
     * {

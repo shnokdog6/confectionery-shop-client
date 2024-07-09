@@ -1,2 +1,8 @@
-export { AuthSlice, setData, resetData } from "./model/slice";
-export { AuthState, AuthResponse } from "./model/types"
+export {
+    AuthSlice,
+    setData,
+    resetData,
+    selectIsAuthorized,
+    selectIsAdmin,
+} from "./model/slice";
+export { AuthState, AuthResponse } from "./model/types";

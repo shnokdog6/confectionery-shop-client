@@ -2,7 +2,7 @@ import { RoleType } from "@entities/role";
 
 export type AuthState = {
     accessToken: string | null;
-    roles: RoleType[];
+    isAdmin: boolean;
     isAuthorized: boolean;
 };
 

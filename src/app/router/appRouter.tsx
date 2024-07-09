@@ -6,6 +6,7 @@ import { BasketPage } from "@pages/basket";
 import { useAppSelector } from "@shared/api";
 import { selectIsAuthorized } from "@entities/auth/model/slice";
 import { OrdersPage } from "@pages/orders/ui/page/OrdersPage";
+import { AddProductPage } from "@pages/add-product/ui/AddProductPage";
 
 function AuthGuard({ children }: PropsWithChildren) {
     const isAuthorized = useAppSelector(selectIsAuthorized);
@@ -37,6 +38,10 @@ export const AppRouter = createBrowserRouter([
                 <ProductPage />
             </ScrollToTop>
         ),
+    },
+    {
+        path: "/product/add",
+        element: <AddProductPage />,
     },
     {
         path: "/basket",

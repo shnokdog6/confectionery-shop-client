@@ -27,7 +27,7 @@ export const ProductPage = () => {
                 isLoading={isLoading}
                 isError={isError}
             />
-            <Footer ref={ref} />
+            <Footer className="mt-0" ref={ref} />
         </PageWrapper>
     );
 };

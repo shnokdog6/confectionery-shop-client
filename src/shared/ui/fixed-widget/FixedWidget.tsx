@@ -1,15 +1,20 @@
-import React, { FC, Fragment, PropsWithChildren } from "react";
+import React, { FC, forwardRef, HTMLProps, PropsWithChildren } from "react";
 import { StyledDiv } from "./FixedWidget.styles";
 
-export interface FixedWidgetProps extends PropsWithChildren {
+export interface FixedWidgetProps
+    extends PropsWithChildren,
+        HTMLProps<HTMLDivElement> {
     pinned?: boolean;
 }
 
-export const FixedWidget: FC<FixedWidgetProps> = ({ pinned, children }) => {
+export const FixedWidget: FC<FixedWidgetProps> = forwardRef<
+    HTMLDivElement,
+    FixedWidgetProps
+>(({ pinned, children, ...props }, ref) => {
     const [placeholderHeight, setPlaceholderHeight] = React.useState(0);
 
     return (
-        <Fragment>
+        <div {...props} ref={ref}>
             {pinned && <div style={{ height: placeholderHeight }}></div>}
             <StyledDiv
                 ref={(ref) => ref && setPlaceholderHeight(ref.offsetHeight)}
@@ -17,6 +22,6 @@ export const FixedWidget: FC<FixedWidgetProps> = ({ pinned, children }) => {
             >
                 {children}
             </StyledDiv>
-        </Fragment>
+        </div>
     );
-};
+});

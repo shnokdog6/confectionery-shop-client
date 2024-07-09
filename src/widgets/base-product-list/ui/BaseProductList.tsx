@@ -9,7 +9,12 @@ export interface BaseProductListProps {
     isLoading?: boolean;
     isError?: boolean;
     onCardClick?: (productID: number) => void;
-    productCardAction: (product: IProduct) => ReactNode;
+    insertBefore?: ReactNode;
+    productCardAction: (
+        product: IProduct,
+        index?: number,
+        array?: IProduct[],
+    ) => ReactNode;
 }
 
 export const BaseProductList: FC<BaseProductListProps> = ({
@@ -17,6 +22,7 @@ export const BaseProductList: FC<BaseProductListProps> = ({
     isLoading,
     isError,
     onCardClick,
+    insertBefore,
     productCardAction,
 }) => {
     return (
@@ -29,8 +35,13 @@ export const BaseProductList: FC<BaseProductListProps> = ({
                 )}
 
                 {items && (
-                    <Row className="d-flex justify-content-start align-items-center">
-                        {items.map((item) => (
+                    <Row className="d-flex justify-content-start align-items-center p-0">
+                        {insertBefore && (
+                            <Col xl={3} lg={4} md={6}>
+                                {insertBefore}
+                            </Col>
+                        )}
+                        {items.map((item, index, array) => (
                             <Col
                                 key={`${item.id}.${item.name}`}
                                 xl={3}
@@ -40,7 +51,11 @@ export const BaseProductList: FC<BaseProductListProps> = ({
                                 <ProductCard
                                     src={item}
                                     onClick={onCardClick}
-                                    action={productCardAction(item)}
+                                    action={productCardAction(
+                                        item,
+                                        index,
+                                        array,
+                                    )}
                                 />
                             </Col>
                         ))}

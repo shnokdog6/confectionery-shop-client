@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useState } from "react";
 import { FixedWidget } from "@shared/ui/fixed-widget";
 import { Spinner, Stack } from "react-bootstrap";
 import { Counter } from "@shared/ui/counter";
@@ -8,7 +8,7 @@ import {
     StyledSpan,
     StyledWrapper,
 } from "./ProductActions.styles";
-import { IDetailedProduct, IProduct } from "@entities/product";
+import { IProduct } from "@entities/product";
 import { AddToBasket } from "@features/add-to-basket";
 
 export interface ProductActionsProps {
@@ -27,7 +27,7 @@ export const ProductActions: FC<ProductActionsProps> = ({
     const [count, setCount] = useState(1);
 
     return (
-        <FixedWidget pinned={pinned}>
+        <FixedWidget className="mt-auto" pinned={pinned}>
             <StyledContainer>
                 <StyledWrapper>
                     {isLoading && <Spinner animation="border" role="status" />}

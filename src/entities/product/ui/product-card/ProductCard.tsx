@@ -5,10 +5,9 @@ import {
     StyledAction,
     StyledHeader,
     StyledImg,
-    StyledSpan,
     StyledWrapper,
 } from "./ProductCard.styles";
-import { StopPropagation } from "@shared/ui/stop-propagation";
+import { Span } from "@shared/ui/span";
 
 export interface ProductCardProps {
     src: IProduct;
@@ -21,9 +20,9 @@ export const ProductCard: FC<ProductCardProps> = ({ src, onClick, action }) => {
         <StyledWrapper onClick={() => onClick?.(src.id)}>
             <StyledImg src={cake} />
             <StyledHeader>{src.name}</StyledHeader>
-            <StyledSpan>{src.cost}₽</StyledSpan>
-            <StyledAction>
-                <StopPropagation>{action}</StopPropagation>
+            <Span>{src.cost}₽</Span>
+            <StyledAction onClick={(e) => e.stopPropagation()}>
+                {action}
             </StyledAction>
         </StyledWrapper>
     );

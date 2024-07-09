@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { BlackButton } from "@shared/ui/black-button";
-import { useAddToBasketMutation } from "@features/add-to-basket/api/AddToBasketApi";
 import { IProduct } from "@entities/product";
+import { useAddToBasketMutation } from "@entities/basket";
+import { Button } from "@shared/ui/button";
 
 export interface AddToBasketProps {
     product?: IProduct;
@@ -18,9 +19,13 @@ export const AddToBasket: FC<AddToBasketProps> = ({
 
     function handleClick() {
         if (!product) return;
-        addToBasket({ productId: product.id, count: count || 1 });
+        addToBasket({ product: { ...product, count } });
         onClick?.();
     }
 
-    return <BlackButton onClick={handleClick}>В корзину</BlackButton>;
+    return (
+        <Button color="black" onClick={handleClick}>
+            В корзину
+        </Button>
+    );
 };

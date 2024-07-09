@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
     position: relative;
-    height: 400px;
+    min-height: 400px;
     box-shadow: 0 0 2px 0 #000;
     background: #fff;
     overflow: hidden;
     border-radius: 10px;
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 `;
 
 export const StyledImg = styled.img`
@@ -21,35 +25,14 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledHeader = styled.h6`
-    position: absolute;
     font-weight: 600;
     font-size: 26px;
     text-align: center;
     color: #000;
-    top: 212px;
-    left: 0;
-    right: 0;
-`;
-
-export const StyledSpan = styled.span`
-    position: absolute;
-    font-weight: 600;
-    font-size: 28px;
-    text-align: center;
-    color: #000;
-    top: 274px;
-    left: 0;
-    right: 0;
+    margin-top: 209px;
 `;
 
 export const StyledAction = styled.div`
-    width: 228px;
-    height: 48px;
-    position: absolute;
-    top: 333px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    padding: 10px;
+    width: 100%;
 `;

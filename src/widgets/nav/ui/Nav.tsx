@@ -6,28 +6,34 @@ import { SignIn } from "@features/sign-in";
 import { useModal } from "@shared/ui/modal";
 import { SignUp } from "@features/sign-up";
 import { useAppSelector } from "@shared/api";
-import { selectIsAuthorized } from "@entities/auth/model/slice";
-import { StyledButtonsFlex, StyledStack } from "./NavStyles";
-
+import { selectIsAdmin, selectIsAuthorized } from "@entities/auth";
+import { StyledButtonsFlex, StyledStack } from "./Nav.styles";
 
 export const Nav = () => {
     const navigate = useNavigate();
     const isAuthorized = useAppSelector(selectIsAuthorized);
-    const { placeholder: SignInPlaceholder, show: showSignIn, hide: hideSignIn } = useModal({ element: <SignIn /> });
-    const { placeholder: SignUpPlaceholder, show: showSignUp, hide: hideSignUp } = useModal({ element: <SignUp /> });
+    const isAdmin = useAppSelector(selectIsAdmin);
+    const {
+        placeholder: SignInPlaceholder,
+        show: showSignIn,
+        hide: hideSignIn,
+    } = useModal({ element: <SignIn /> });
+    const {
+        placeholder: SignUpPlaceholder,
+        show: showSignUp,
+        hide: hideSignUp,
+    } = useModal({ element: <SignUp /> });
 
     useEffect(() => {
         hideSignIn();
         hideSignUp();
-    }, [isAuthorized])
+    }, [isAuthorized]);
 
     if (!isAuthorized) {
         return (
             <StyledStack direction="horizontal">
                 <StyledButtonsFlex direction="horizontal">
-                    <OutlineButton onClick={showSignIn}>
-                        Войти
-                    </OutlineButton>
+                    <OutlineButton onClick={showSignIn}>Войти</OutlineButton>
                     <OutlineButton onClick={showSignUp}>
                         Зарегистрироваться
                     </OutlineButton>
@@ -45,12 +51,14 @@ export const Nav = () => {
                 <OutlineButton onClick={() => navigate("/")}>
                     Главная
                 </OutlineButton>
-                <OutlineButton onClick={() => navigate("/basket")}>
-                    Корзина
-                </OutlineButton>
                 <OutlineButton onClick={() => navigate("/orders")}>
                     Заказы
                 </OutlineButton>
+                {isAdmin || (
+                    <OutlineButton onClick={() => navigate("/basket")}>
+                        Корзина
+                    </OutlineButton>
+                )}
             </StyledButtonsFlex>
             <Search />
         </StyledStack>

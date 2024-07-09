@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import basket from "@images/basket.png"
+import basket from "@images/basket.png";
 import { Container } from "react-bootstrap";
+import { Span } from "@shared/ui/span";
 
 export const StyledContainer = styled(Container)`
     display: flex;
@@ -22,11 +23,7 @@ export const StyledWrapper = styled.div`
     }
 `;
 
-export const StyledSpan = styled.span`
-    font-weight: 600;
-    font-size: 28px;
-    text-align: center;
-    color: black;
+export const StyledSpan = styled(Span)`
     margin-right: 25px;
     
     @media (max-width: 576px) {

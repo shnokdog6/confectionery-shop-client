@@ -1,5 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from "react";
-import { StyledContainer, StyledDiv, StyledFooter } from "./Footer.module";
+import { StyledContainer, StyledDiv, StyledFooter } from "./Footer.styles";
 import { Stack } from "react-bootstrap";
 import { ImageLink } from "@shared/ui/image-link";
 import whatsapp from "@images/whatsapp.png";
